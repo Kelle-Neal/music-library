@@ -5,11 +5,11 @@ from .serializers import (
   UserSerializer, 
   GroupSerializer, 
   ArtistSerializer, 
-  # AlbumSerializer, 
-  # GenreSerializer, 
-  # SongSerializer
+  AlbumSerializer, 
+  GenreSerializer, 
+  SongSerializer
   )
-from .models import Artist  
+from .models import Artist, Album, Genre, Song
 
 class UserViewSet(viewsets.ModelViewSet):
     """ API endpoint that allows users to be viewed or edited."""
@@ -29,18 +29,18 @@ class ArtistViewSet(viewsets.ModelViewSet):
   serializer_class = Artist
 
 
-# class AlbumViewSet(viewsets.ModelViewSet):
-#   queryset = Album.object.all()
-#   serializer_class = Album  
+class AlbumViewSet(viewsets.ModelViewSet):
+  queryset = Album.objects.all()
+  serializer_class = Album  
 
 
-# class GenreViewSet(viewsets.ModelViewSet):
-#   queryset = Genre.object.all()
-#   serializer_class = Genre
+class GenreViewSet(viewsets.ModelViewSet):
+  queryset = Genre.objects.all()
+  serializer_class = Genre
 
-# class SongViewSet(viewsets.ModelViewSet):
-#   queryset = Song.object.all()
-#   serializer_class = Song
+class SongViewSet(viewsets.ModelViewSet):
+  queryset = Song.objects.all()
+  serializer_class = Song
 
 
 

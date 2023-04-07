@@ -24,9 +24,9 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 router.register(r'artists', views.ArtistViewSet)
-# router.register(r'album', views.AlbumViewSet)
-# router.register(r'genre', views.GenreViewSet)
-# router.register(r'song', views.SongViewSet)
+router.register(r'albums', views.AlbumViewSet)
+router.register(r'genres', views.GenreViewSet)
+router.register(r'songs', views.SongViewSet)
 
 
 

@@ -2,9 +2,9 @@ from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import (
   Artist,
-  # Album,
-  # Genre,
-  # Song,
+  Album,
+  Genre,
+  Song,
   # Playlist,
 )
 
@@ -22,28 +22,28 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class ArtistSerializer(serializers.ModelSerializer):
   class Meta:
     model = Artist
-    fields = ['id', 'name', 'bio', 'image']
+    fields = ['id', 'name']
 
-# class AlbumSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model = Album
-#     fields = ['id', 'name']
+class AlbumSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Album
+    fields = ['id', 'name']
 
 
-# class GenreSerializer(serializers.ModelSerializer):
-#   class Meta:
-#     model = Genre
-#     fields = ['id', 'name']
+class GenreSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Genre
+    fields = ['id', 'name']
 
-# class SongSerializer(serializers.ModelSerializer):    
-#   artist = ArtistSerializer
-#   album = AlbumSerializer
-#   genre = GenreSerializer
-#   class Meta:
-#     model = Song
-#     fields = [
-#       'name',
-#       'artist',
-#       'album',
-#       'genre',
-#     ]
+class SongSerializer(serializers.ModelSerializer):    
+  artist = ArtistSerializer
+  album = AlbumSerializer
+  genre = GenreSerializer
+  class Meta:
+    model = Song
+    fields = [
+      'name',
+      'artist',
+      'album',
+      'genre',
+    ]
