@@ -26,21 +26,21 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class ArtistViewSet(viewsets.ModelViewSet):
   queryset = Artist.objects.all()
-  serializer_class = Artist
+  serializer_class = ArtistSerializer
 
 
 class AlbumViewSet(viewsets.ModelViewSet):
   queryset = Album.objects.all()
-  serializer_class = Album  
+  serializer_class = AlbumSerializer
 
 
 class GenreViewSet(viewsets.ModelViewSet):
   queryset = Genre.objects.all()
-  serializer_class = Genre
+  serializer_class = GenreSerializer
 
 class SongViewSet(viewsets.ModelViewSet):
   queryset = Song.objects.all()
-  serializer_class = Song
+  serializer_class = SongSerializer
 
 
 
